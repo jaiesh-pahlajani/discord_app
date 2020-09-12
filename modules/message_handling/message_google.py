@@ -17,10 +17,16 @@ class Google(Message):
     def handle(self):
         query = self.message[8:]
         self.redis = Redis()
+
+        # append recent search to redis
         self.redis.append_google_search_history(query)
+
+        # query top results using google custom search engine
         results = self.resource.list(q=query, cx='009557628044748784875:5lejfe73wrw').execute()
+
         c = 0
         reply = ''
+        # loops through to return and extracts top 5 results
         for result in results.get('items'):
             if c < 5:
                 reply += "Title: " + result.get('title') + " Link: " + result.get('link') + '\n'

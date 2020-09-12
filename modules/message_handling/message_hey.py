@@ -15,6 +15,8 @@ class Hey(Message):
 
     def handle(self):
         if self.message == DoloresReceives.HEY.value:
+            # returns 'hi'
             return DoloresReplies.HI.value
         else:
+            # handles for cases where input is 'hey junior!'
             return DoloresReplies.HI_HANDLING.value
