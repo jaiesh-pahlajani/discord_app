@@ -121,7 +121,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # Dolores Bot Setup Token
-DISCORD_TOKEN = 'NzU0MjI2NDUyMjkxMTI1MzQ5.X1xqHw.0ie9ep_nupRaJ1eWafoQ5dQO52Q'
+DISCORD_TOKEN = ''
 
 # Google Search API Key
-GOOGLE_SEARCH_API_KEY = 'AIzaSyCSBf4oWXU6_Q0kxBvh0gxrghYVv-HFuDw'
+GOOGLE_SEARCH_API_KEY = ''
