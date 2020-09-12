@@ -40,7 +40,12 @@ $ workon virtual-env
 pip install -r requirements.txt
 ```
 
-4. Start Dolores
+4. Start Redis Server
+```
+redis-server
+```
+
+5. Start Dolores
 ```
 python manage.py start_dolores
 ```
