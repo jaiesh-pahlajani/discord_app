@@ -12,10 +12,11 @@ class Google(Message):
     def __init__(self, message):
         super(Google, self).__init__(message)
         self.resource = build("customsearch", 'v1', developerKey=GOOGLE_SEARCH_API_KEY).cse()
-        self.redis = Redis()
+        self.redis = None
 
     def handle(self):
         query = self.message[8:]
+        self.redis = Redis()
         self.redis.append_google_search_history(query)
         results = self.resource.list(q=query, cx='009557628044748784875:5lejfe73wrw').execute()
         c = 0
